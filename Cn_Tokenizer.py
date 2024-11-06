@@ -9,10 +9,16 @@ chinese_sentence = [
     '這個週末要團練'
 ]
 
+jieba.add_word("芯愛")
+jieba.add_word("利潤最大化")
+jieba.add_word("辦公室")
+jieba.add_word("團練")
 vocab = [] # 分析文本後產生的詞彙表
 for sentence in chinese_sentence:
 	# tokens = sentence.split(' ') # 空白斷詞產生token
     tokens = jieba.lcut(sentence)
+    # tokens = jieba.lcut(sentence, cut_all=True)
+    # tokens = jieba.lcut_for_search(sentence)
     vocab.extend(tokens)
     #print(tokens)
     #input()
